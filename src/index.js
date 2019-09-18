@@ -1,12 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import axios from 'axios';
+axios.defaults.withCredentials = true;
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
+const greetingMessage =
+`                        _
+                       | |
+   __ _ _ __   _____  _| |_ _   _ _ __   ___
+  / _\` | \'_ \\ / _ \\ \\/ / __| | | | \'_ \\ / _ \\
+ | (_| | |_) |  __/>  <| |_| |_| | |_) |  __/_
+  \__,_| .__/ \\___/_/\\_\\\\__|\\__, | .__/ \\___(_)
+       | |                   __/ | |
+       |_|                  |___/|_|
+
+  	Made by Đorđe Gluvajić (github.com/crn1)
+
+`;
+
+console.log(greetingMessage);
+
+ReactDOM.render(<App />, document.getElementById('root'));
 serviceWorker.unregister();
+
