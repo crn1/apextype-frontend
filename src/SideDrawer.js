@@ -1,4 +1,4 @@
-import React, { useGlobal } from 'reactn';
+import React from 'react';
 import { withRouter } from 'react-router-dom';
 
 import clsx from 'clsx';
@@ -27,8 +27,6 @@ const useStyles = makeStyles(theme => ({
 const ResponsiveDrawer = (props) => {
 
   const classes = useStyles();
-
-	const [currentUser] = useGlobal('currentUser');
 
   return (
     <>
