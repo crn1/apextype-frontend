@@ -35,7 +35,6 @@ const Home = () => {
 			</Grid>
 		</Grid>
 	);
-
 }
 
 export default Home;

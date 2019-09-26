@@ -24,7 +24,6 @@ const useStyles = makeStyles(theme => ({
 	}
 }));
 
-
 const Blog = (props) => {
 
 	const classes = useStyles();

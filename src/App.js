@@ -1,6 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
+import Fade from '@material-ui/core/Fade';
+
 import Wrapper from './Wrapper';
 import Home from './Home';
 import Blog from './Blog';
