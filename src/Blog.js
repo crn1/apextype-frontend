@@ -5,6 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
+import Fade from '@material-ui/core/Fade';
 import { makeStyles } from '@material-ui/core/styles';
 
 import SearchBar from './SearchBar';
@@ -54,41 +55,45 @@ const Blog = (props) => {
 	const mapItems = () => {
 		return filteredData.map((item, index) => {
 			return (
-				<Grid container item key={item.name + '-' + index}>
-					<Grid item>
-						<Link variant='h5' color='primary'
-								underline='none'
-								href={`/${item.slug}`}>
-							<Box fontWeight='fontWeightBold'>
-								{ item.title }
-							</Box>
-						</Link>
+				<Fade in={true} timeout={550}>
+					<Grid container item key={item.name + '-' + index}>
+						<Grid item>
+							<Link variant='h5' color='primary'
+									underline='none'
+									href={`/${item.slug}`}>
+								<Box fontWeight='fontWeightBold'>
+									{ item.title }
+								</Box>
+							</Link>
+						</Grid>
+						<Grid item xs={12} className={classes.paddingTop}>
+							<Typography variant='caption'>
+								{ moment(item.date).format('dddd, Mo MMMM YYYY') }
+							</Typography>
+						</Grid>
+						<Grid item>
+							<Typography>
+								{ item.description }
+							</Typography>
+						</Grid>
 					</Grid>
-					<Grid item xs={12} className={classes.paddingTop}>
-						<Typography variant='caption'>
-							{ moment(item.date).format('dddd, Mo MMMM YYYY') }
-						</Typography>
-					</Grid>
-					<Grid item>
-						<Typography>
-							{ item.description }
-						</Typography>
-					</Grid>
-				</Grid>
+				</Fade>
 			);
 		});
 	}
 
 	return (
-		<Grid container item spacing={4} md={8} className={classes.flex}>
-			<Grid item xs={12}>
-				<SearchBar
-					search={search}
-					setSearch={setSearch}
-				/>
+		<Fade in={true} timeout={550}>
+			<Grid container item spacing={4} md={8} className={classes.flex}>
+				<Grid item xs={12}>
+					<SearchBar
+						search={search}
+						setSearch={setSearch}
+					/>
+				</Grid>
+				{ mapItems() }
 			</Grid>
-			{ mapItems() }
-		</Grid>
+		</Fade>
 	);
 
 }
