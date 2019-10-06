@@ -5,6 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
+import Fade from '@material-ui/core/Fade';
 import { makeStyles } from '@material-ui/core/styles';
 
 import grey from '@material-ui/core/colors/grey';
@@ -71,30 +72,32 @@ const Blog = (props) => {
 	useEffect(() => { getData(); }, []);
 
 	return (
-		<Grid item container spacing={1} md={8} className={classes.flex}>
-			<Grid item xs={12}>
-				<Typography variant='h4' component='div' color='primary'>
-					<Box fontWeight='fontWeightBold'>
-						{ data.title }
-					</Box>
-				</Typography>
+		<Fade in={true} timeout={550}>
+			<Grid item container spacing={1} md={8} className={classes.flex}>
+				<Grid item xs={12}>
+					<Typography variant='h4' component='div' color='primary'>
+						<Box fontWeight='fontWeightBold'>
+							{ data.title }
+						</Box>
+					</Typography>
+				</Grid>
+				<Grid item xs={12}>
+					<Typography component='div' variant='caption'>
+						{ moment(data.date).format('dddd, Mo MMMM YYYY') }
+					</Typography>
+				</Grid>
+				<Grid item xs={12} className={classes.marginTop}>
+					<Typography component='div'>
+						<Interweave
+							tagName='div'
+							disableLineBreaks={true}
+							transform={transform}
+							content={data.content}
+						/>
+					</Typography>
+				</Grid>
 			</Grid>
-			<Grid item xs={12}>
-				<Typography component='div' variant='caption'>
-					{ moment(data.date).format('dddd, Mo MMMM YYYY') }
-				</Typography>
-			</Grid>
-			<Grid item xs={12} className={classes.marginTop}>
-				<Typography component='div'>
-					<Interweave
-						tagName='div'
-						disableLineBreaks={true}
-						transform={transform}
-						content={data.content}
-					/>
-				</Typography>
-			</Grid>
-		</Grid>
+		</Fade>
 	);
 }
 
