@@ -40,18 +40,18 @@ const useStyles = makeStyles(theme => ({
 
 }));
 
+const Articles = [
+	{
+		title: 'MOZE',
+		date: 'nemo',
+		content: 'IDEMO BRE',
+		slug: 'blog-post-example',
+	}
+];
 
-const Blog = (props) => {
+const Article = (props) => {
 
 	const classes = useStyles();
-
-	const [data, setData] = useState({});
-
-	const getData = () => {
-		axios.get(`http://localhost:5000/post/${props.match.params.slug}`).then(res => {
-			setData(res.data.data);
-		});
-	}
 
 	const transform = (node: HTMLElement, children: Node[]): React.ReactNode => {
 		switch(node.tagName)
@@ -69,21 +69,19 @@ const Blog = (props) => {
 		}
 	}
 
-	useEffect(() => { getData(); }, []);
-
 	return (
 		<Fade in={true} timeout={550}>
 			<Grid item container spacing={1} md={8} className={classes.flex}>
 				<Grid item xs={12}>
 					<Typography variant='h4' component='div' color='primary'>
 						<Box fontWeight='fontWeightBold'>
-							{ data.title }
+							{ props.title }
 						</Box>
 					</Typography>
 				</Grid>
 				<Grid item xs={12}>
 					<Typography component='div' variant='caption'>
-						{ moment(data.date).format('dddd, Mo MMMM YYYY') }
+						{ props.date }
 					</Typography>
 				</Grid>
 				<Grid item xs={12} className={classes.marginTop}>
@@ -92,7 +90,7 @@ const Blog = (props) => {
 							tagName='div'
 							disableLineBreaks={true}
 							transform={transform}
-							content={data.content}
+							content={props.content}
 						/>
 					</Typography>
 				</Grid>
@@ -101,4 +99,4 @@ const Blog = (props) => {
 	);
 }
 
-export default withRouter(Blog);
+export default withRouter(Article);

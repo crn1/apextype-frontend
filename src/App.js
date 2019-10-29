@@ -8,6 +8,16 @@ import Contact from './Contact';
 import Article from './Article';
 import Projects from './Projects';
 
+import NotFound from './404.js';
+
+const FishArticle = () => (
+	<Article
+		title='moze'
+		content={'josvisemoze'}
+		date='da'
+	/>
+);
+
 const App = () => (
 	<BrowserRouter>
 		<Wrapper>
@@ -16,7 +26,9 @@ const App = () => (
 				<Route path='/blog' component={Blog} />
 				<Route path='/contact' component={Contact} />
 				<Route path='/projects' component={Projects} />
-				<Route path='/:slug' component={Article} />
+
+				<Route path='/idea' component={FishArticle} />
+				<Route component={NotFound} />
 			</Switch>
 		</Wrapper>
 	</BrowserRouter>

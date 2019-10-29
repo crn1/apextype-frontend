@@ -29,7 +29,15 @@ const Blog = (props) => {
 
 	const classes = useStyles();
 
-	const [data, setData] = useState({ items: [], total: 0});
+	const [data, setData] = useState([
+		{
+			date: '10/29/2019',
+			description: 'Batteries not included',
+			slug: 'blog-post-example',
+			title: 'Blog post example'
+		}
+	]);
+
 	const [filteredData, setFilteredData] = useState([]);
 	const [search, setSearch] = useState('');
 
@@ -41,7 +49,7 @@ const Blog = (props) => {
 	}
 
 	const searchItems = () => {
-		setFilteredData(data.items.filter(item => {
+		setFilteredData(data.filter(item => {
 			let tempTitle = item.title.toUpperCase();
 			let tempDesc = item.description.toUpperCase();
 			let tempSearch = search.toUpperCase();
@@ -49,7 +57,6 @@ const Blog = (props) => {
 		}));
 	}
 
-	useEffect(() => { getData(); }, []);
 	useEffect(() => { searchItems(); }, [search]);
 
 	const mapItems = () => {
@@ -68,7 +75,7 @@ const Blog = (props) => {
 						</Grid>
 						<Grid item xs={12} className={classes.paddingTop}>
 							<Typography variant='caption'>
-								{ moment(item.date).format('dddd, Mo MMMM YYYY') }
+								{ item.date }
 							</Typography>
 						</Grid>
 						<Grid item>
