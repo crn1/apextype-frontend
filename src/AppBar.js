@@ -17,7 +17,7 @@ const NavBar = (props) => {
 			[theme.breakpoints.up('sm')]: {
 				width: `calc(100% - ${props.drawerWidth}px)`,
 			},
-			background: 'transparent',
+			background: 'white',
 			boxShadow: 'none',
 		},
 

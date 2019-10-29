@@ -87,7 +87,7 @@ const Wrapper = (props) => {
 							keepMounted: true, // Better open performance on mobile.
 						}}
 					>
-						<SideDrawer drawerWidth={drawerWidth} />
+						<SideDrawer handleDrawerToggle={handleDrawerToggle} drawerWidth={drawerWidth} />
 					</Drawer>
 				</Hidden>
 				<Hidden xsDown implementation='css'>
@@ -98,7 +98,7 @@ const Wrapper = (props) => {
 						variant='permanent'
 						open
 					>
-						<SideDrawer drawerWidth={drawerWidth} />
+						<SideDrawer handleDrawerToggle={handleDrawerToggle} drawerWidth={drawerWidth} />
 					</Drawer>
 				</Hidden>
 			</nav>

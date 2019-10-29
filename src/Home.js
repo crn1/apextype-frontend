@@ -2,6 +2,7 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Fade from '@material-ui/core/Fade';
+import Link from '@material-ui/core/Link'
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
@@ -17,7 +18,6 @@ const useStyles = makeStyles(theme => ({
 	}
 }));
 
-
 const Home = () => {
 
 	const classes = useStyles();
@@ -32,7 +32,12 @@ const Home = () => {
 				</Grid>
 				<Grid item xs={12}>
 					<Typography className={classes.flexGrow} variant='h5' align='center'>
-						My name is Đorđe Gluvajić and I am full-stack developer.
+						My name is Đorđe and I am a full-stack developer.
+					</Typography>
+				</Grid>
+				<Grid item xs={12}>
+					<Typography className={classes.flexGrow} variant='h5' align='center'>
+						I develop in <Link href='https://reactjs.org'>React.js</Link> and <Link href='https://palletsprojects.com/p/flask/'>Flask</Link>. I take a special approach to development that involves minimalism with an emphasis on performance, security, and stability.
 					</Typography>
 				</Grid>
 			</Grid>

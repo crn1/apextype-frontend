@@ -1,5 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { useTheme } from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
@@ -27,6 +29,16 @@ const useStyles = makeStyles(theme => ({
 const ResponsiveDrawer = (props) => {
 
   const classes = useStyles();
+	const theme = useTheme();
+	const matches = useMediaQuery(theme.breakpoints.up('sm'));
+
+	const goTo = (page) => {
+		if(!matches)
+		{
+			props.handleDrawerToggle();
+		}
+		props.history.push(page);
+	}
 
   return (
     <>
@@ -42,22 +54,22 @@ const ResponsiveDrawer = (props) => {
 			<Divider />
 			<List>
 				<ListItem button key={'drawer-home'}
-						onClick={() => props.history.push('/')}
+						onClick={ () => goTo('/') }
 				>
 					<ListItemText align='center' primary={'Home'} />
 				</ListItem>
-				<ListItem button key={'drawer-articles'}
-						onClick={() => props.history.push('/blog')}
-				>
-					<ListItemText align='center' primary={'Blog'} />
-				</ListItem>
 				<ListItem button key={'drawer-projects'}
-						onClick={() => props.history.push('/projects')}
+						onClick={ () => goTo('/projects') }
 				>
 					<ListItemText align='center' primary={'Projects'} />
 				</ListItem>
+				<ListItem button key={'drawer-articles'}
+						onClick={ () => goTo('/blog') }
+				>
+					<ListItemText align='center' primary={'Blog'} />
+				</ListItem>
 				<ListItem button key={'drawer-contact'}
-						onClick={() => props.history.push('/contact')}
+						onClick={ () => goTo('/contact') }
 				>
 					<ListItemText align='center' primary={'Contact'} />
 				</ListItem>
