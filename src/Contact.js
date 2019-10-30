@@ -2,6 +2,7 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Fade from '@material-ui/core/Fade';
+import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
@@ -27,17 +28,12 @@ const Home = () => {
 			<Grid container spacing={4} className={classes.flex}>
 				<Grid item xs={12}>
 					<Typography className={classes.flexGrow} variant='h3' align='center'>
-						Say "Hello" to me.
+						Say Hello.
 					</Typography>
 				</Grid>
 				<Grid item xs={12}>
 					<Typography className={classes.flexGrow} variant='h5' align='center'>
-						If you have any questions, buisness proposals or if you just want to say 'Hi' feel free to contact me on:
-					</Typography>
-				</Grid>
-				<Grid item xs={12}>
-					<Typography className={classes.flexGrow} variant='h5' align='center'>
-					LinkedIn • GitHub • E-mail
+						You can contact me via <Link href='mailto: gluvajic@aol.com'>email</Link> or my <Link href='https://github.com/crn1'>GitHub</Link> page.
 					</Typography>
 				</Grid>
 			</Grid>

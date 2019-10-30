@@ -32,9 +32,9 @@ const Blog = (props) => {
 	const [data, setData] = useState([
 		{
 			date: '10/29/2019',
-			description: 'Batteries not included',
-			slug: 'blog-post-example',
-			title: 'Blog post example'
+			description: 'This is the first article on this website. Welcome!',
+			slug: 'hello',
+			title: 'Hello World!'
 		}
 	]);
 

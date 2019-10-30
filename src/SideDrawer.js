@@ -58,11 +58,6 @@ const ResponsiveDrawer = (props) => {
 				>
 					<ListItemText align='center' primary={'Home'} />
 				</ListItem>
-				<ListItem button key={'drawer-projects'}
-						onClick={ () => goTo('/projects') }
-				>
-					<ListItemText align='center' primary={'Projects'} />
-				</ListItem>
 				<ListItem button key={'drawer-articles'}
 						onClick={ () => goTo('/blog') }
 				>

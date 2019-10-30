@@ -10,11 +10,11 @@ import Projects from './Projects';
 
 import NotFound from './404.js';
 
-const FishArticle = () => (
+const HelloWorld = () => (
 	<Article
-		title='moze'
-		content={'josvisemoze'}
-		date='da'
+		title='Hello World!'
+		content={'Hello. Welcome to apextype!'}
+		date='10/29/2019'
 	/>
 );
 
@@ -27,7 +27,7 @@ const App = () => (
 				<Route path='/contact' component={Contact} />
 				<Route path='/projects' component={Projects} />
 
-				<Route path='/idea' component={FishArticle} />
+				<Route path='/hello' component={HelloWorld} />
 				<Route component={NotFound} />
 			</Switch>
 		</Wrapper>

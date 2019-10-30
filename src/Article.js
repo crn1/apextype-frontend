@@ -40,15 +40,6 @@ const useStyles = makeStyles(theme => ({
 
 }));
 
-const Articles = [
-	{
-		title: 'MOZE',
-		date: 'nemo',
-		content: 'IDEMO BRE',
-		slug: 'blog-post-example',
-	}
-];
-
 const Article = (props) => {
 
 	const classes = useStyles();
