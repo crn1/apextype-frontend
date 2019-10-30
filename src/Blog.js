@@ -67,7 +67,8 @@ const Blog = (props) => {
 						<Grid item>
 							<Link variant='h5' color='primary'
 									underline='none'
-									href={`/${item.slug}`}>
+									href='javascript:void(0)'
+									onClick={() => props.history.push(`/${item.slug}`)}>
 								<Box fontWeight='fontWeightBold'>
 									{ item.title }
 								</Box>
