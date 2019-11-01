@@ -10,10 +10,27 @@ import Projects from './Projects';
 
 import NotFound from './404.js';
 
-const HelloWorld = () => (
+const Tech = () => (
 	<Article
-		title='Hello World!'
-		content={'Hello. Welcome to apextype!'}
+		title='Technologies I Use For Development'
+		content={`
+			<p>This is the set of tools and technologies that I use for my daily work. I experimented with a lot of things for over a years, but I decided to settle down (for now) with these:</p>
+			<br />
+			<p><strong>React.js - Frontend development</strong></p>
+			<p>"React.js is JavaScript library for building user interfaces", says the official website. It was recommended to me by an old friend of mine when I started the development of my first web-based project. From that time, React is my preference. I used it with Redux and later with MobX, but with the introduction of Hooks, I decided to use React.js without any additional state-management libraries. In the last month, I started experimenting with Next.js.</p>
+			<br />
+			<p><strong>Flask - Backend development</strong></p>
+			<p>Conventional wisdom says that if you use Python for backend, you surely use Django. But that is not the case with me. For the backend, I use Python Flask. It is "a lightweight WSGI web application framework" and it makes things easier for me because, in combination with peewee, my projects are always simple, scalable and stable.</p>
+			<br />
+			<p><strong>DigitalOcean - Deployment</strong></p>
+			<p>DigitalOcean is becoming more and more mainstream these days. With its ridiculously easy setup, stability and performance, DigitalOcean is a no-brainer in DevOps world today.</p>
+			<br />
+			<p><strong>Vim - Text Editor and IDE</strong></p>
+			<p>Vim is a text editor which makes my daily work most productive. It doesn't need a mouse to function, it is highly customizable and it's pretty fast. I can freely say that you can use Vim for every situation. You can turn it into full-scale IDE for your project, even with an automatic compilation of written code.</p>
+			<br />
+			<p><strong>FreeBSD - Operating System</strong><p>
+			<p>It's not Windows. It's not Mac. Heck, it's not even Linux. Why FreeBSD? First and foremost - stability. Second, the ability to customize it to achieve maximum minimalism. I don't need that much apps for development: I only need terminal and Firefox. Nothing more, nothing less. And FreeBSD allows me to do it. But hey, there is also something like Arch and Manjaro in the linux world that can do the same thing, right? I suppose that I like to be a black sheep in everything that I do.</p>
+		`}
 		date='10/29/2019'
 	/>
 );
@@ -55,7 +72,7 @@ const App = () => (
 				<Route path='/contact' component={Contact} />
 				<Route path='/projects' component={Projects} />
 
-				<Route path='/hello' component={HelloWorld} />
+				<Route path='/tech' component={Tech} />
 				<Route path='/vim' component={Vim} />
 				<Route component={NotFound} />
 			</Switch>

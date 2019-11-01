@@ -32,16 +32,16 @@ const Blog = (props) => {
 	const [data, setData] = useState([
 		{
 			date: '10/29/2019',
-			description: 'This is the first article on this website. Welcome!',
-			slug: 'hello',
-			title: 'Hello World!'
-		},
-		{
-			date: '10/29/2019',
 			description: "It isn't THAT bad.",
 			slug: 'vim',
 			title: 'Why You Should Bother Learning Vim?'
-		}
+		},
+		{
+			date: '10/29/2019',
+			description: 'Paper and a pen. No joke!',
+			slug: 'tech',
+			title: 'Technologies I Use For Development'
+		},
 	]);
 
 	const [filteredData, setFilteredData] = useState([]);
