@@ -31,7 +31,7 @@ const Tech = () => (
 			<p><strong>FreeBSD - Operating System</strong><p>
 			<p>It's not Windows. It's not Mac. Heck, it's not even Linux. Why FreeBSD? First and foremost - stability. Second, the ability to customize it to achieve maximum minimalism. I don't need that much apps for development: I only need terminal and Firefox. Nothing more, nothing less. And FreeBSD allows me to do it. But hey, there is also something like Arch and Manjaro in the linux world that can do the same thing, right? I suppose that I like to be a black sheep in everything that I do.</p>
 		`}
-		date='10/29/2019'
+		date='8/10/2019'
 	/>
 );
 
@@ -59,7 +59,7 @@ const Vim = () => (
 			<p><strong>But. Again. You'll have to learn it.</strong></p>
 			<p>I think this is the main thing people aren't using Vim. The reward of learning Vim is surely productivity, but again - no pain, no gain. If you are comfortable with your GUI editor and if it gets the job done you don't need to make the transition. But, if you are curious and if you want to expand your comfort zone as a programmer (or even as a writer) you should definitely try it!</p>
 		`}
-		date='10/29/2019'
+		date='10/12/2019'
 	/>
 );
 
