@@ -54,21 +54,15 @@ const ResponsiveDrawer = (props) => {
 			</div>
 			<Divider />
 			<List>
-				<Link href='/'>
-					<ListItem button key={'drawer-home'}>
-						<ListItemText align='center' primary={'Home'} />
-					</ListItem>
-				</Link>
-				<Link href='/blog'>
-					<ListItem button key={'drawer-articles'}>
-						<ListItemText align='center' primary={'Blog'} />
-					</ListItem>
-				</Link>
-				<Link href='/contact'>
-					<ListItem button key={'drawer-contact'}>
-						<ListItemText align='center' primary={'Contact'} />
-					</ListItem>
-				</Link>
+				<ListItem button onClick={() => goTo('/')} key={'drawer-home'}>
+					<ListItemText align='center' primary={'Home'} />
+				</ListItem>
+				<ListItem button onClick={() => goTo('/blog')} key={'drawer-articles'}>
+					<ListItemText align='center' primary={'Blog'} />
+				</ListItem>
+				<ListItem button onClick={() => goTo('/contact')} key={'drawer-contact'}>
+					<ListItemText align='center' primary={'Contact'} />
+				</ListItem>
 			</List>
 			<Box color='text.disabled' className={clsx(classes.flex, classes.contact)}>
 				<Typography variant='body2' align='center' color='inherit'>
