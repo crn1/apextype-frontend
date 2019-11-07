@@ -11,6 +11,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import Link from '@material-ui/core/Link';
 
 const useStyles = makeStyles(theme => ({
 	toolbar: theme.mixins.toolbar,
@@ -53,21 +54,21 @@ const ResponsiveDrawer = (props) => {
 			</div>
 			<Divider />
 			<List>
-				<ListItem button key={'drawer-home'}
-						onClick={ () => goTo('/') }
-				>
-					<ListItemText align='center' primary={'Home'} />
-				</ListItem>
-				<ListItem button key={'drawer-articles'}
-						onClick={ () => goTo('/blog') }
-				>
-					<ListItemText align='center' primary={'Blog'} />
-				</ListItem>
-				<ListItem button key={'drawer-contact'}
-						onClick={ () => goTo('/contact') }
-				>
-					<ListItemText align='center' primary={'Contact'} />
-				</ListItem>
+				<Link href='/'>
+					<ListItem button key={'drawer-home'}>
+						<ListItemText align='center' primary={'Home'} />
+					</ListItem>
+				</Link>
+				<Link href='/blog'>
+					<ListItem button key={'drawer-articles'}>
+						<ListItemText align='center' primary={'Blog'} />
+					</ListItem>
+				</Link>
+				<Link href='/contact'>
+					<ListItem button key={'drawer-contact'}>
+						<ListItemText align='center' primary={'Contact'} />
+					</ListItem>
+				</Link>
 			</List>
 			<Box color='text.disabled' className={clsx(classes.flex, classes.contact)}>
 				<Typography variant='body2' align='center' color='inherit'>

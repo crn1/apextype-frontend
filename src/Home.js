@@ -9,13 +9,8 @@ const useStyles = makeStyles(theme => ({
 	flex: {
 		display: 'flex',
 		alignItems: 'center',
-		[theme.breakpoints.up('sm')]: {
-			paddingTop: '15%',
-		}
+		paddingTop: '15%',
 	},
-	flexGrow: {
-		flexGrow: 1,
-	}
 }));
 
 const Home = () => {
@@ -24,19 +19,19 @@ const Home = () => {
 
 	return (
 		<Fade in={true} timeout={550}>
-			<Grid container spacing={4} className={classes.flex}>
+			<Grid container justify='center' spacing={4} className={classes.flex}>
 				<Grid item xs={12}>
-					<Typography className={classes.flexGrow} variant='h3' align='center'>
+					<Typography variant='h3' align='center'>
 						Welcome.
 					</Typography>
 				</Grid>
 				<Grid item xs={12}>
-					<Typography className={classes.flexGrow} variant='h5' align='center'>
+					<Typography variant='h5' align='center'>
 						My name is Đorđe and I am a full-stack developer.
 					</Typography>
 				</Grid>
-				<Grid item xs={12}>
-					<Typography className={classes.flexGrow} variant='h5' align='center'>
+				<Grid item xs={12} xl={7}>
+					<Typography variant='h5' align='center'>
 						I develop in <Link href='https://reactjs.org'>React.js</Link> and <Link href='https://palletsprojects.com/p/flask/'>Flask</Link>. I take a special approach to development that involves minimalism with an emphasis on performance, security, and stability.
 					</Typography>
 				</Grid>

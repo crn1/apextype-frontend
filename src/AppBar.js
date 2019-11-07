@@ -19,6 +19,7 @@ const NavBar = (props) => {
 			},
 			background: 'white',
 			boxShadow: 'none',
+			borderBottom: `1px solid ${theme.palette.divider}`,
 		},
 
 		toolbar: {
